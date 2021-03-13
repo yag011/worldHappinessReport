@@ -1,0 +1,42 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+
+library(ggplot2)
+library(dplyr)
+library(RColorBrewer)
+library(tidyr)
+library(knitr)
+library(readr)
+
+US_HS <- read_csv("US_HS.csv")
+
+head(US_HS)
+
+```
+```{r}
+
+ggplot(data = US_HS, aes(x=Year, y=Happiness.Score)) +
+  geom_line() +
+  geom_point(shape=21, color="steelblue2", fill="steelblue2", size=3) +
+  labs(title = "United States Happines Score 2015 - 2019\n",
+       caption = "Source: World Happiness Report",
+       x = "",
+       y = "\n\n\n\n\n\n\n\n\nHappiness\n Score") +  
+  theme(panel.background = element_rect(fill = NA), 
+        panel.grid.major.y = element_line(colour = "grey90"), 
+        axis.ticks.x = element_blank(), 
+        axis.ticks.y = element_line(colour = "grey90"), 
+        panel.grid.minor.y = element_line(colour = "grey99"),
+        axis.title.y = element_text(angle = 0),
+        plot.title = element_text(size = rel(2), hjust = 0.5))
+        #axis.text.x = element_blank()) 
+
+```

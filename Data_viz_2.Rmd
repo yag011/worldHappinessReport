@@ -1,0 +1,66 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(RColorBrewer)
+library(tidyr)
+library(knitr)
+library(readr)
+
+df16 <- read_csv("2016.csv")
+
+df19 <- read_csv("2019.csv")
+
+
+df19 <- left_join(df19, select(df16, "Country", "Region"), by = "Country")
+df19$Region[71] <- "Eastern Asia"
+df19$Region[33] <- "Eastern Asia"
+df19$Region[155] <- "Sub-Saharan Africa"
+df19$Region[113] <- "Sub-Saharan Africa"
+df19$Region[139] <- "Sub-Saharan Africa"
+
+df19 <- left_join(df19, select(df16, "Country", "Region"), by = "Country")
+#df19$Region[71] <- "Eastern Asia"
+#df19$Region[33] <- "Eastern Asia"
+#df19$Region[155] <- "Sub-Saharan Africa"
+#df19$Region[113] <- "Sub-Saharan Africa"
+#df19$Region[139] <- "Sub-Saharan Africa"
+#df19 <- df19 %>% select(Country, Region, Happiness.Score)
+
+
+df19[df19$Country == "Trinidad & Tobago", "Region"] <- "Latin America and Caribbean"
+df19[df19$Country == "Northern Cyprus", "Region"] <- "Central and Eastern Europe"
+df19[df19$Country == "North Macedonia", "Region"] <- "Central and Eastern Europe"
+df19[df19$Country == "Gambia", "Region"] <- "Sub-Saharan Africa"
+df19[df19$Country == "Mozambique", "Region"] <- "Sub-Saharan Africa"
+df19[df19$Country == "Swaziland", "Region"] <- "Sub-Saharan Africa"
+df19[df19$Country == "Lesotho", "Region"] <- "Sub-Saharan Africa"
+
+#filter(df19, is.na(Region)) 
+```
+
+
+```{r}
+names(df19)[names(df19)=="Economy..GDP.per.Capita."] <- "Economy"
+names(df19)[names(df19)=="Healthy life expectancy"] <- "Health"
+names(df19)[names(df19)=="Perceptions of corruption"] <- "Trust"
+names(df19)[names(df19)=="Freedom to make life choices"] <- "Freedom"
+names(df19)[names(df19)=="Happiness.Score"] <- "Happiness"
+
+pairs(~ Economy+Family+Health+Freedom+Trust+Generosity, data = df19, 
+      main="Variables Affecting of Happiness", panel = panel.smooth, font.labels = 1, cex.main=1.5, col="steelblue2", pch = 20, cex = .7, font.main = 1)
+
+```
+
+```{r}
+
+```
+

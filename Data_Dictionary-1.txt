@@ -1,0 +1,52 @@
+Data Dictionary
+
+Overall rank – numeric
+Each of the 156 countries are listed highest to lowest based on the country’s happiness score.  The overall rank number represents the county’s place on this list (1 – 156).
+
+Country – character
+The name of the country.
+
+Region – character
+The region that the county is located.
+
+Country or Region – character
+The name of the country.
+
+Happiness Score – numeric
+The numeric score given to a county based on the self-reported score or calculated scores of the following varables: GDP per capita, Social Support, Healthy life expectancy, Freedom to make life choices, 
+Generosity, Perceptions of corruption.
+
+GDP per capita – numeric
+GDP per capita is in terms of Purchasing Power Parity (PPP) adjusted to constant 2011 international dollars, taken from the World Development Indicators (WDI) released by the World Bank on November 14, 2018.  These calculations were made by the World Happiness Report and given a numeric value.  
+
+Social Support – numeric
+Social support is the national average of the binary responses (either 0 or 1) to the Gallup World Poll question “If you were in trouble, do you have relatives or friends you can count on to help you whenever you need them, or not?” These calculations were made by the World Happiness Report and given a numeric value.  
+
+Healthy life expectancy – numeric
+The World Happiness Report calculated the Healthy life expectancy at birth based on data from the World Health Organization (WHO) Global Health Observatory data repository.
+
+Freedom to make life choices – numeric
+Freedom to make life choices is the national average of binary responses to the Gallup World Poll question “Are you satisfied or dissatisfied with your freedom to choose what you do with your life?”
+
+Generosity – numeric
+Generosity is the residual of regressing the national average of Gallup World Poll responses to the question “Have you donated money to a charity in the past month?” These calculations were made by the World Happiness Report and given a numeric value.  
+
+Perceptions of corruption – numeric
+Perceptions of corruption are the average of binary answers to two GWP questions: “Is corruption widespread throughout the government or not?” and “Is corruption widespread within businesses or not?”
+
+U.S. states with the highest percentage of adults reporting poor mental health as of 2018* - numeric
+
+Top 10 U.S. states with the highest percentage of poor mental health among adults 2018. 
+
+Reasons for not receiving mental health services among U.S. adults in 2018* - character
+
+Survey question with optional answers to choose from.  
+
+U.S. mass shootings, by prior signs of shooter's mental health issues 1982-2020 – character
+
+Mass shootings in the United States between 1982 and February 2020, by presence of prior signs of shooter's mental health issues 
+
+
+
+	
+
