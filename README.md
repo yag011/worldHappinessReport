@@ -9,3 +9,5 @@ https://7kil1zhd7be77k4qoy1erq-on.drv.tw/World_Happiness_Report_Visualization/#/
 Data source:
 
 https://www.kaggle.com/mathurinache/world-happiness-report
+
+Note: Please download this repo. Some files cannot display properly on GitHub. 
